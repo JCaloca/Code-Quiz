@@ -18,3 +18,11 @@
 .start-div {
   text-align: center;
 }
+
+.answer-choices button {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
