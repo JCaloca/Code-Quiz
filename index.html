@@ -24,12 +24,23 @@
         </p>
         <button id="start-button">Start</button>
       </div>
+
       <div id="questions-div" class="hide">
         <h2 id="question-title"></h2>
         <div id="answer-choices" class="answer-choices"></div>
       </div>
+
+      <div id="end-div" class="hide">
+        <h2>Game Ended.</h2>
+        <p>The final score is <span id="end-score"></span></p>
+        <p>Enter initials: <input type="text" id="initials" max="3" /></p>
+        <button id="submit-initials-button">Submit</button>
+      </div>
+
+      <div id="feedback-div" class="feedback-div hide"></div>
     </div>
 
+    <script src="./assets/js/questions.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>

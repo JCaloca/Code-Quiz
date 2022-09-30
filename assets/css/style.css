@@ -26,3 +26,12 @@
 .hide {
   display: none;
 }
+
+.feedback-div {
+  font-style: normal;
+  font-size: 150%;
+  margin-top: 20px;
+  padding-top: 10px;
+  color: blanchedalmond;
+  border-top: 2px solid #ccc;
+}
