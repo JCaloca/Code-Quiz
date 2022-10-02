@@ -10,6 +10,13 @@ let answerChoicesDiv = document.getElementById("answer-choices");
 let correctAnswerDiv = document.getElementById("correct-answer");
 let wrongAnswerDiv = document.getElementById("wrong-answer");
 let score = 0;
+let endDiv = document.getElementById("end-div");
+let endScore = document.getElementById("end-score");
+let highScore = document.getElementById("high-score-div");
+let highScoreList = document.getElementById("high-score-list");
+let submitInitialsButton = document.getElementById("submit-initials-button");
+let initials = document.getElementById("initials");
+let highscores = [];
 
 function beginQuiz() {
   startDiv.setAttribute("class", "hide");
@@ -36,9 +43,27 @@ function timerFunc() {
 }
 
 function endQuiz() {
-  alert("Quiz Done!" + " " + score);
+  // alert("Quiz Done!" + " " + score);
+  questionsDiv.classList.add("hide");
+  endDiv.classList.remove("hide");
+  clearInterval(timerId);
+  timerEl.textContent = "Time: 0 ";
+  endScore.textContent = score;
   //to be done when timer runs out end quiz
   // if timer runs out end quiz
+}
+
+submitInitialsButton.addEventListener("click", function () {
+  console.log(initials.value);
+  var userInput = initials.value + " " + score;
+  highscores.push(userInput);
+  localStorage.setItem("user-info", highscores);
+  render();
+});
+
+// to do: render user score into high score div, still need to build
+function render() {
+  var lsArray = localStorage.getItem("user-info");
 }
 
 //displays questions when start is clicked
@@ -59,6 +84,7 @@ function displayQuestion(question) {
         wrongAnswerDiv.setAttribute("class", "hide");
         correctAnswerDiv.removeAttribute("class");
         score++;
+        console.log(score);
       } else {
         correctAnswerDiv.setAttribute("class", "hide");
         wrongAnswerDiv.removeAttribute("class");
