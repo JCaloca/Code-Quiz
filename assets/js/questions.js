@@ -1,28 +1,29 @@
 let questions = [
   {
-    title: "Q1",
-    answerChoices: ["A1", "A2", "A3", "A4"],
-    correctAnswer: "A3",
-  },
-
-  {
-    title: "Q2",
-    answerChoices: ["A1", "A2", "A3", "A4"],
-    correctAnswer: "A1",
+    title: "Question 1: What is the Javascript operator for addition?",
+    answerChoices: ["A: -", "B: *", "C: =", "D: +"],
+    correctAnswer: "D: +",
   },
   {
-    title: "Q3",
-    answerChoices: ["A1", "A2", "A3", "A4"],
-    correctAnswer: "A4",
+    title: "Question 2: What data type can only take the values true or false?",
+    answerChoices: ["A: Boolean", "B: String ", "C: Numbers", "D: Objects"],
+    correctAnswer: "A: Boolean",
   },
   {
-    title: "Q4",
-    answerChoices: ["A1", "A2", "A3", "A4"],
-    correctAnswer: "A2",
+    title:
+      "Question 3: An onclick event happens when a user ____ on an element.",
+    answerChoices: ["A: drags", "B: copy", "C: clicks", "D: mouseover"],
+    correctAnswer: "C: clicks",
   },
   {
-    title: "Q5",
-    answerChoices: ["A1", "A2", "A3", "A4"],
-    correctAnswer: "A1",
+    title:
+      "Question 4: To add a new element to the beginning of an array and return the new length we use?",
+    answerChoices: ["A: shift", "B: unshift", "C: length", "D: fill"],
+    correctAnswer: "B: unshift",
+  },
+  {
+    title: "To add a single line comment to JavaScript we use ___.",
+    answerChoices: ["A: //", "B: <!---->", "C: /*", "D: ++"],
+    correctAnswer: "A: //",
   },
 ];

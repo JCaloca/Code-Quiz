@@ -9,9 +9,11 @@
   </head>
 
   <body>
+    <!--High Score link and timer-->
     <div class="vhs"><a href="vhs.html">View High Score</a></div>
-    <div id="timer" class="timer">time: 100</div>
+    <div id="timer" class="timer">time: 120</div>
 
+    <!--Intro screen to page with start quiz button-->
     <div class="quiz-container">
       <div id="start-div" class="start-div">
         <h1>JavaScript Quiz</h1>
@@ -22,17 +24,23 @@
           suscipit facere ipsum pariatur commodi adipisci architecto numquam.
           Adipisci?
         </p>
+        <!--Start game button-->
         <button id="start-button">Start</button>
       </div>
 
+      <!--Will begin after start button is clicked, default is hidden-->
       <div id="questions-div" class="hide">
         <h2 id="question-title"></h2>
         <div id="answer-choices" class="answer-choices"></div>
+        <div id="correct-answer" class="hide">Correct!</div>
+        <div id="wrong-answer" class="hide">Wrong!</div>
       </div>
 
+      <!--End of game section, default is hidden-->
+      <!--Need to add-->
       <div id="end-div" class="hide">
-        <h2>Game Ended.</h2>
-        <p>The final score is <span id="end-score"></span></p>
+        <h2>Game Ended!</h2>
+        <p>Your Score: <span id="end-score"></span></p>
         <p>Enter initials: <input type="text" id="initials" max="3" /></p>
         <button id="submit-initials-button">Submit</button>
       </div>
