@@ -1,9 +1,3 @@
-.vhs {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-}
-
 .timer {
   position: absolute;
   top: 12px;
@@ -13,6 +7,8 @@
 .quiz-container {
   margin: 120px auto 0 auto;
   max-width: 750px;
+  border: 5px;
+  border-style: double;
 }
 
 .start-div {
@@ -25,13 +21,4 @@
 
 .hide {
   display: none;
-}
-
-.feedback-div {
-  font-style: normal;
-  font-size: 150%;
-  margin-top: 20px;
-  padding-top: 10px;
-  color: purple;
-  border-top: 2px solid #ccc;
 }

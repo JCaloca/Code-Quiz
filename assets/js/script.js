@@ -4,7 +4,7 @@ let startDiv = document.getElementById("start-div");
 let questionsDiv = document.getElementById("questions-div");
 let timerId;
 let timerEl = document.getElementById("timer");
-let timeLeft = 120;
+let timeLeft = 50;
 let questionAsk = document.getElementById("question-title");
 let answerChoicesDiv = document.getElementById("answer-choices");
 let correctAnswerDiv = document.getElementById("correct-answer");
