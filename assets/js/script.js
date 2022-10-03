@@ -12,11 +12,17 @@ let wrongAnswerDiv = document.getElementById("wrong-answer");
 let score = 0;
 let endDiv = document.getElementById("end-div");
 let endScore = document.getElementById("end-score");
-let highScore = document.getElementById("high-score-div");
+let highScoreDiv = document.getElementById("high-score-div");
 let highScoreList = document.getElementById("high-score-list");
 let submitInitialsButton = document.getElementById("submit-initials-button");
 let initials = document.getElementById("initials");
-let highscores = [];
+const highScoresKey = "user-info";
+let highscores = localStorage.getItem(highScoresKey);
+if (highscores == null) {
+  highscores = [];
+} else {
+  highscores = JSON.parse(highscores);
+}
 
 function beginQuiz() {
   startDiv.setAttribute("class", "hide");
@@ -55,15 +61,28 @@ function endQuiz() {
 
 submitInitialsButton.addEventListener("click", function () {
   console.log(initials.value);
-  var userInput = initials.value + " " + score;
+  var userInput = {
+    name: initials.value,
+    score: score,
+  };
   highscores.push(userInput);
-  localStorage.setItem("user-info", highscores);
-  render();
+  localStorage.setItem(highScoresKey, JSON.stringify(highscores));
+  renderScores();
 });
 
 // to do: render user score into high score div, still need to build
-function render() {
-  var lsArray = localStorage.getItem("user-info");
+function renderScores() {
+  // var lsArray = localStorage.getItem(highScoresKey);
+  console.log(highscores);
+  for (let i = 0; i < highscores.length; i++) {
+    let highScoreListItem = document.createElement("li");
+    var x = document.createTextNode(
+      highscores[i].name + " " + highscores[i].score
+    );
+    highScoreListItem.appendChild(x);
+    highScoreList.appendChild(highScoreListItem);
+  }
+  highScoreDiv.classList.remove("hide");
 }
 
 //displays questions when start is clicked
@@ -75,7 +94,7 @@ function displayQuestion(question) {
   }
 
   function displayAnswer(choice, correctAnswer) {
-    var answerButton = document.createElement("BUTTON");
+    var answerButton = document.createElement("button");
     var t = document.createTextNode(choice);
     answerButton.appendChild(t);
     answerChoicesDiv.appendChild(answerButton);
